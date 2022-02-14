@@ -10,21 +10,29 @@ namespace FavoriteThingsGames
 
             var r = new Random();
             var favNumber = r.Next(1, 100);
-            var userInput = int.Parse(Console.ReadLine());
 
-            
-            {
-                if (userInput == favNumber)
+            bool isDone = false;
+
+            while(!isDone)
+            { 
+            var userInputNum = int.Parse(Console.ReadLine());
+
+
                 {
-                    Console.WriteLine("WOW! Congratulations! This is correct");
-                }
-                else if (userInput > favNumber)
-                {
-                    Console.WriteLine("Too high!");
-                }
-                else
-                {
-                    Console.WriteLine("Too low!");
+                    if (userInputNum == favNumber)
+                    {
+                        Console.WriteLine("WOW! Congratulations! This is correct.");
+                        isDone = true;
+                    }
+                    else if (userInputNum > favNumber)
+                    {
+                        Console.WriteLine("Too high! Try again?");
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("Too low! Try again :)");
+                    }
                 }
             }
 
